@@ -1,0 +1,33 @@
+package com.example.app2
+
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
+
+class MainActivity : AppCompatActivity() {
+
+    // Variáveis globais (nível de classe) para os Exercícios 2 e 4
+    var contador = 0
+    var totalRolagens = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    // ==========================================
+    // Exercício 4
+    // ==========================================
+    fun rolarDado(view: View) {
+        totalRolagens++ // Incrementa a quantidade de rolagens
+        val resultadoDado = Random().nextInt(6) + 1 // Sorteia de 1 a 6
+
+        val txtDado = findViewById<TextView>(R.id.txtDado)
+        txtDado.text = "Rolagem $totalRolagens: resultado $resultadoDado"
+
+        println("Rolagem $totalRolagens: resultado $resultadoDado registrado no Logcat.")
+    }
+}

@@ -1,0 +1,38 @@
+package com.example.app2
+
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
+
+class MainActivity : AppCompatActivity() {
+
+    // Variáveis globais (nível de classe) para os Exercícios 2 e 4
+    var contador = 0
+    var totalRolagens = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    // ==========================================
+    // Exercício 6
+    // ==========================================
+    fun rolarDadoColorido(view: View) {
+        val resultado = Random().nextInt(6) + 1
+        val txtDesafio = findViewById<TextView>(R.id.txtDesafio)
+
+        txtDesafio.text = "Resultado: $resultado"
+
+        if (resultado % 2 == 0) {
+            txtDesafio.setTextColor(Color.parseColor("#1F7A6C")) // Verde escuro para Par
+            println("Cor aplicada: Verde (#1F7A6C) para o número par $resultado")
+        } else {
+            txtDesafio.setTextColor(Color.parseColor("#D32F2F")) // Vermelho para Ímpar
+            println("Cor aplicada: Vermelho (#D32F2F) para o número ímpar $resultado")
+        }
+    }
+}

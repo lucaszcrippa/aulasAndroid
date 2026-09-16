@@ -1,0 +1,36 @@
+package com.example.app2
+
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
+
+class MainActivity : AppCompatActivity() {
+
+    // Variáveis globais (nível de classe) para os Exercícios 2 e 4
+    var contador = 0
+    var totalRolagens = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    // ==========================================
+    // Exercício 3
+    // ==========================================
+    fun sortear(view: View) {
+        val numeroSorteado = Random().nextInt(11) // Sorteia de 0 a 10
+
+        val txtSorteio = findViewById<TextView>(R.id.txtSorteio)
+        txtSorteio.text = "Número: $numeroSorteado"
+
+        if (numeroSorteado % 2 == 0) {
+            println("número par sorteado: $numeroSorteado")
+        } else {
+            println("número ímpar sorteado: $numeroSorteado")
+        }
+    }
+}

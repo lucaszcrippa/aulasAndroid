@@ -1,0 +1,30 @@
+package com.example.app2
+
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
+
+class MainActivity : AppCompatActivity() {
+
+    // Variáveis globais (nível de classe) para os Exercícios 2 e 4
+    var contador = 0
+    var totalRolagens = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    // ==========================================
+    // Exercício 1 · Nível: Fácil
+    // ==========================================
+    fun saudarUsuario(view: View) {
+        println("Botão Saudar foi clicado!")
+
+        val txtSaudacao = findViewById<TextView>(R.id.txtSaudacao)
+        txtSaudacao.text = "Olá, seja bem-vindo(a)!"
+    }
+}

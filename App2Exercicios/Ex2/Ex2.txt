@@ -1,0 +1,32 @@
+package com.example.app2
+
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
+
+class MainActivity : AppCompatActivity() {
+
+    // Variáveis globais (nível de classe) para os Exercícios 2 e 4
+    var contador = 0
+    var totalRolagens = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    // ==========================================
+    // Exercício 2
+    // ==========================================
+    fun contarClique(view: View) {
+        contador++ // Incrementa 1 ao contador existente
+
+        val txtContador = findViewById<TextView>(R.id.txtContador)
+        txtContador.text = "Cliques: $contador"
+
+        println("botão clicado $contador vezes")
+    }
+}
